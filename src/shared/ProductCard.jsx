@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function ProductCard({ product }) {
   const { image, name, price, originalPrice, rating, reviews } = product;
@@ -77,13 +78,14 @@ export default function ProductCard({ product }) {
         </div>
 
         {isHovered ? (
+          <Link to='/product/Golden-Pothos'>
           <Button
             variant="outline"
             className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium"
             size="sm"
           >
             View Details
-          </Button>
+          </Button></Link>
         ) : (
           <Button
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
