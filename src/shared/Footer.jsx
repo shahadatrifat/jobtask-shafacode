@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { ExternalLink, Facebook, Heart, Instagram, Twitter, Youtube } from "lucide-react";
 
 const Footer=()=> {
   return (
@@ -152,7 +152,20 @@ const Footer=()=> {
           <p className="text-center text-primary-foreground/70 text-sm">
             © 2025 TriGardening. All Rights Reserved
           </p>
+          <p className="text-beige/80 text-center  text-sm flex items-center gap-2">
+              Made with <Heart className="w-4 h-4 text-red-400 fill-current" /> by{' '}
+              <a
+                href="https://shahadatrifat.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-emerald-300 font-semibold inline-flex items-center gap-1 transition-colors group"
+              >
+                Shahadat Hossain Rifat
+                <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </p>
         </div>
+        
       </div>
     </footer>
   );
