@@ -8,47 +8,53 @@ import BlogDetailPage from "../pages/BlogPage/BlogDetailPage/BlogDetail";
 import Cart from "../pages/CartPage/Cart";
 import Checkout from "../pages/CheckoutPage/Checkout";
 import Ty from "../pages/ThankyouPage/Ty";
+import About from "../pages/About/About";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component:RootLayout,
-    children: [ 
+    Component: RootLayout,
+    children: [
       {
-        index:true,
-        Component:Home,
+        index: true,
+        Component: Home,
       },
       {
-        path:"/products/plants",
-        Component:ProductPage
+        path: "/products/plants",
+        Component: ProductPage,
       },
       {
-        path:"/product/Golden-Pothos",
-        Component:ProductDetailPage
+        path: "/product/Golden-Pothos",
+        Component: ProductDetailPage,
       },
       {
-        path:"blog",
-        Component:BlogPage
-      },{
-        path:"/blog/:slug",
-        Component:BlogDetailPage
+        path: "blog",
+        Component: BlogPage,
       },
       {
-        path:"/cart",
-        Component:Cart
+        path: "/blog/:slug",
+        Component: BlogDetailPage,
       },
       {
-        path:"*",
-        Component:Home
+        path: "/cart",
+        Component: Cart,
       },
       {
-        path:"checkout",
-        Component:Checkout
+        path: "*",
+        Component: Home,
       },
       {
-        path:"thankyou",
-        Component:Ty
-      }
+        path: "checkout",
+        Component: Checkout,
+      },
+      {
+        path: "thankyou",
+        Component: Ty,
+      },
+      {
+        path: "about",
+        Component: About,
+      },
     ],
   },
 ]);
