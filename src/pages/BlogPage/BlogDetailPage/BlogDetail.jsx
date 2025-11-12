@@ -17,7 +17,7 @@ import { Separator } from "../../../components/ui/separator";
 import { Input } from "../../../components/ui/input";
 import { Search } from "lucide-react";
 
-export default function BlogDetailPage() {
+const BlogDetail = () => {
   const { slug } = useParams();
   const blog = getBlogBySlug(slug);
   const recentBlogs = getRecentBlogs(4);
@@ -234,3 +234,5 @@ export default function BlogDetailPage() {
     </div>
   );
 }
+
+export default BlogDetail;

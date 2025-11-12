@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 
-export default function CustomerReviews({ reviews, onWriteReview }) {
+const CustomerReviews = ({ reviews, onWriteReview })=> {
   return (
     <div className="mb-16">
       <h2 className="text-2xl font-bold text-foreground mb-2">
@@ -150,3 +150,5 @@ export default function CustomerReviews({ reviews, onWriteReview }) {
     </div>
   );
 }
+
+export default CustomerReviews;

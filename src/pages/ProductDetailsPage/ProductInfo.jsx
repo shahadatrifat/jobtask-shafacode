@@ -3,7 +3,7 @@ import { Star, Heart, Minus, Plus } from "lucide-react";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 
-export default function ProductInfo({ product }) {
+const ProductInfo=({ product })=> {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("150+");
   const [selectedType, setSelectedType] = useState("Deshi");
@@ -124,3 +124,5 @@ export default function ProductInfo({ product }) {
     </div>
   );
 }
+
+export default ProductInfo

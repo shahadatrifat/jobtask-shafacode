@@ -21,7 +21,7 @@ import {
 } from "../../components/ui/select";
 import { ScrollArea } from "../../components/ui/scroll-area";
 
-export default function ProductsPage() {
+const ProductPage = () => {
   const displayedProducts = productsData.slice(0, 9);
 
   return (
@@ -190,3 +190,5 @@ export default function ProductsPage() {
     </div>
   );
 }
+
+export default ProductPage

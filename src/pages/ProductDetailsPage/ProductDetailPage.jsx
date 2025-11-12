@@ -19,7 +19,7 @@ import WriteReviewDialog from "./WriteReviewDialog";
 import CustomerReviews from "./CustomerReview";
 
 
-export default function ProductDetailPage() {
+const ProductDetailPage=()=> {
   const [isReviewDialogOpen, setIsReviewDialogOpen] = useState(false);
   const [isWriteReviewOpen, setIsWriteReviewOpen] = useState(false);
   const { signInWithGoogle, setUser, user } = useContext(AuthContext);
@@ -224,3 +224,5 @@ export default function ProductDetailPage() {
     </div>
   );
 }
+
+export default ProductDetailPage;

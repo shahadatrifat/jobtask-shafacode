@@ -6,7 +6,7 @@ import { Button } from "../../components/ui/button";
 import { Search } from "lucide-react";
 import { Card } from "../../components/ui/card";
 
-export default function BlogPage() {
+const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const featuredBlog = blogData[0];
   const recentPosts = blogData.slice(1, 5);
@@ -123,3 +123,5 @@ export default function BlogPage() {
     </div>
   );
 }
+
+export default BlogPage;

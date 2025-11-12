@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ProductGallery({ images }) {
+const ProductGallery=({ images })=> {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
@@ -32,3 +32,5 @@ export default function ProductGallery({ images }) {
     </div>
   );
 }
+
+export default ProductGallery

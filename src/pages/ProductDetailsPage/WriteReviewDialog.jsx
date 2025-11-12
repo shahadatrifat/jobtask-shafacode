@@ -10,7 +10,7 @@ import { Label } from "../../components/ui/label";
 import { Textarea } from "../../components/ui/textarea";
 import { Star, Upload } from "lucide-react";
 
-export default function WriteReviewDialog({ isOpen, onClose, product }) {
+const WriteReviewDialog =({ isOpen, onClose, product })=> {
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState("");
 
@@ -123,3 +123,5 @@ export default function WriteReviewDialog({ isOpen, onClose, product }) {
     </Dialog>
   );
 }
+
+export default WriteReviewDialog

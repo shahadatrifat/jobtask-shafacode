@@ -1,6 +1,6 @@
 import { Card } from "../../components/ui/card";
 
-export default function SuggestedProducts({ items }) {
+const SuggestedProducts =({ items })=> {
   return (
     <Card className="p-4">
       <h3 className="font-semibold text-lg mb-4">You may also like</h3>
@@ -23,3 +23,5 @@ export default function SuggestedProducts({ items }) {
     </Card>
   );
 }
+
+export default SuggestedProducts

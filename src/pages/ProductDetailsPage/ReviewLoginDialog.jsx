@@ -9,7 +9,7 @@ import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Button } from "../../components/ui/button";
 
-export default function ReviewLoginDialog({ isOpen, onClose, onGoogleLogin }) {
+const ReviewLoginDialog = ({ isOpen, onClose, onGoogleLogin }) =>{
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
@@ -89,3 +89,5 @@ export default function ReviewLoginDialog({ isOpen, onClose, onGoogleLogin }) {
     </Dialog>
   );
 }
+
+export default ReviewLoginDialog

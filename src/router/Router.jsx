@@ -5,6 +5,9 @@ import { createBrowserRouter } from "react-router";
 import ProductDetailPage from "../pages/ProductDetailsPage/ProductDetailPage";
 import BlogPage from "../pages/BlogPage/BlogPage";
 import BlogDetailPage from "../pages/BlogPage/BlogDetailPage/BlogDetail";
+import Cart from "../pages/CartPage/Cart";
+import Checkout from "../pages/CheckoutPage/Checkout";
+import Ty from "../pages/ThankyouPage/Ty";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +32,22 @@ export const router = createBrowserRouter([
       },{
         path:"/blog/:slug",
         Component:BlogDetailPage
+      },
+      {
+        path:"/cart",
+        Component:Cart
+      },
+      {
+        path:"*",
+        Component:Home
+      },
+      {
+        path:"checkout",
+        Component:Checkout
+      },
+      {
+        path:"thankyou",
+        Component:Ty
       }
     ],
   },

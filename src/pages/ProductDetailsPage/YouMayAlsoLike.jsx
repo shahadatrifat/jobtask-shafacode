@@ -1,6 +1,6 @@
 import { Card } from "../../components/ui/card";
 
-export default function YouMayAlsoLike({ products }) {
+const YouMayAlsoLike = ({ products })=> {
   return (
     <div className="lg:col-span-3">
       <Card className="p-4">
@@ -31,3 +31,5 @@ export default function YouMayAlsoLike({ products }) {
     </div>
   );
 }
+
+export default YouMayAlsoLike

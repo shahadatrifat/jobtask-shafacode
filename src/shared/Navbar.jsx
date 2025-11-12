@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { useContext, useState } from "react";
@@ -88,13 +88,13 @@ export default function Navbar() {
 
           {/* Cart Icon */}
           <div className="relative">
-            <Button
+            <Link to="/cart"><Button
               variant="ghost"
               size="icon"
               className="rounded-full text-secondary"
             >
               <ShoppingCart className="h-5 w-5" />
-            </Button>
+            </Button></Link>
             <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs font-semibold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">
               3
             </span>
