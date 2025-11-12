@@ -1,9 +1,10 @@
 import { NavLink } from "react-router";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
-import { useState } from "react";
-import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import { useContext, useState } from "react";
+import { LogIn, LogOut, Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import { Input } from "../components/ui/input";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,24 @@ export default function Navbar() {
     { name: "Blog", path: "/blog" },
     { name: "Plant Clinic", path: "/clinic" },
   ];
+  const { signOutUser,user, signInWithGoogle  } = useContext(AuthContext);
 
+  const handleLogout = async () => {
+    try {
+      await signOutUser();
+      console.log("Logged out successfully!");
+    } catch (err) {
+      console.error("Logout failed:", err);
+    }
+  };
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithGoogle();
+      console.log("Logged in with Google:", result.user);
+    } catch (error) {
+      console.error("Google login failed:", error.message);
+    }
+  };
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -28,7 +46,10 @@ export default function Navbar() {
           to="/"
           className="text-xl font-semibold flex items-center gap-2 whitespace-nowrap"
         >
-          <span>🌿 TriGardening</span>
+          <span>
+            <span className="text-accent text-4xl">T</span>ri
+            <span className="text-accent text-4xl">G</span>ardening
+          </span>
         </NavLink>
 
         {/* Center: Nav Links */}
@@ -92,6 +113,23 @@ export default function Navbar() {
           <Button className="bg-[#CC7722] text-accent-foreground hover:bg-[#CC7722] font-medium">
             Call Now
           </Button>
+          {user ? (
+            <Button
+              onClick={handleLogout}
+              variant=""
+              className="bg-[#CC7722] text-accent-foreground hover:bg-[#CC7722] font-medium"
+            >
+              <LogOut />logout
+            </Button>
+          ) : (
+            <Button
+              variant=""
+              onClick={handleGoogleLogin}
+              className="bg-[#CC7722] text-accent-foreground hover:bg-[#CC7722] font-medium"
+            >
+              <LogIn />login
+            </Button>
+          )}
         </motion.div>
 
         {/* Mobile Menu Button */}
@@ -125,9 +163,19 @@ export default function Navbar() {
               {link.name}
             </NavLink>
           ))}
-          <Button className=" bg-[#CC7722]
-          font-sm">
+          <Button
+            className=" bg-[#CC7722]
+          font-sm"
+          >
             Call Now
+          </Button>
+          <Button
+            onClick={handleLogout}
+            variant=""
+            className="flex items-center gap-2 border border-secondary rounded-xl px-4 py-2 hover:bg-accent/10"
+          >
+            <LogOut className="w-4 h-4" />
+            <span>Logout</span>
           </Button>
         </motion.nav>
       )}
