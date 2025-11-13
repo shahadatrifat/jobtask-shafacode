@@ -9,6 +9,7 @@ import Cart from "../pages/CartPage/Cart";
 import Checkout from "../pages/CheckoutPage/Checkout";
 import Ty from "../pages/ThankyouPage/Ty";
 import About from "../pages/About/About";
+import Chatbot from "../pages/Chatbot/Chatbot";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
         path: "about",
         Component: About,
       },
+      {
+        path:"ai-chat",
+        Component:Chatbot
+      }
     ],
   },
 ]);

@@ -163,6 +163,18 @@ export default function Navbar() {
               {link.name}
             </NavLink>
           ))}
+          <div className="relative">
+            <Link to="/cart"><Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full text-secondary"
+            >
+              <ShoppingCart className="h-5 w-5" />
+            </Button></Link>
+            <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs font-semibold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">
+              3
+            </span>
+          </div>
           <Button
             className=" bg-[#CC7722]
           font-sm"
